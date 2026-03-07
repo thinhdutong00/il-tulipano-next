@@ -9,7 +9,7 @@ export default function Home() {
     "/pizza-margherita-con-basilico-tulipano.webp",
     "/filetto-di-carne-alla-griglia-tulipano.webp",
     "/scaffale-dei-vini-tulipano.webp",
-    "/tavola-con-tovaglia-tulipano.webp",
+    "/tavolo-con-tovaglia-tulipano.webp",
     "/lampade-soffitto-tulipano.webp"
    
   ];
