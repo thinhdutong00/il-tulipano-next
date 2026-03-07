@@ -122,7 +122,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="relative h-80 w-full overflow-hidden shadow-sm">
             <Image 
-              src="/staff1.png" 
+              src="/piatto-di-pasta-gambero.webp" 
               alt="Pasta" 
               fill 
               className="object-cover hover:scale-105 transition-transform duration-500" 
@@ -130,7 +130,7 @@ export default function Home() {
           </div>
           <div className="relative h-80 w-full overflow-hidden shadow-sm">
             <Image 
-              src="/staff2.png" 
+              src="/pizza-acchiughe.webp" 
               alt="Pizza" 
               fill 
               className="object-cover hover:scale-105 transition-transform duration-500" 
@@ -138,7 +138,7 @@ export default function Home() {
           </div>
           <div className="relative h-80 w-full overflow-hidden shadow-sm">
             <Image 
-              src="/staff3.png" 
+              src="/filetto-rucola.webp" 
               alt="Carne" 
               fill 
               className="object-cover hover:scale-105 transition-transform duration-500" 
