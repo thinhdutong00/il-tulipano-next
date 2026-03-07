@@ -1,37 +1,78 @@
+"use client"; // Necessario per far funzionare il timer del carosello
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-// Palette Colori Originali:
-// Rosso/Bordeaux: #800020 (o simile) -> Tailwind: text-[#800020]
-// Oro/Beige: #D4AF37 -> Tailwind: text-[#D4AF37]
-
 export default function Home() {
+  // Lista delle tue foto reali caricate su VS Code
+  const slides = [
+    "/hero1 - tulipano carpi.webp",
+    "/lampade soffitto - tulipano.webp",
+    "/scaffale dei vini - tulipano.webp",
+    "/tavola con tovaglia - tulipano.webp"
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Logica per il cambio immagine automatico (5 secondi come su Elementor)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
     <main className="min-h-screen bg-white text-[#333333]">
       
-      {/* 1. HERO SECTION */}
-      <section className="relative h-[85vh] flex items-center justify-center text-center text-white">
+      {/* 1. HERO SECTION CON CAROSELLO */}
+      <section className="relative h-[85vh] flex items-center justify-center text-center text-white overflow-hidden">
+        
+        {/* Overlay scuro per leggere bene i testi */}
         <div className="absolute inset-0 bg-black/40 z-10" />
+
+        {/* Immagini del Carosello */}
         <div className="absolute inset-0">
-          {/* Assicurati di avere staff1.png nella cartella public */}
-          <Image 
-            src="/staff1.png" 
-            alt="Background Il Tulipano" 
-            fill 
-            className="object-cover"
-            priority
-          />
+          {slides.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <Image 
+                src={image} 
+                alt={`Background ${index}`} 
+                fill 
+                className="object-cover scale-105" // Leggero zoom per effetto profondità
+                priority={index === 0}
+              />
+            </div>
+          ))}
         </div>
         
+        {/* Testi e Pulsanti (Invariati come richiesto) */}
         <div className="relative z-20 px-4">
-          <h1 className="text-5xl md:text-7xl font-serif mb-4 drop-shadow-lg">Benvenuti al Tulipano</h1>
+          <h1 className="text-5xl md:text-7xl font-serif mb-4 drop-shadow-lg tracking-tight">
+            Benvenuti al Tulipano
+          </h1>
           <div className="flex flex-col md:flex-row gap-4 justify-center mt-8">
-            <button className="bg-[#800020] hover:bg-[#600018] text-white px-8 py-3 rounded-sm font-bold transition uppercase tracking-widest">
+            <button className="bg-[#800020] hover:bg-[#600018] text-white px-8 py-3 rounded-sm font-bold transition uppercase tracking-widest shadow-lg">
               Guarda il menù
             </button>
-            <button className="bg-white hover:bg-gray-100 text-black px-8 py-3 rounded-sm font-bold transition uppercase tracking-widest">
+            <button className="bg-[#E5B54F] hover:bg-[#D4A43D] text-white px-8 py-3 rounded-sm font-bold transition uppercase tracking-widest shadow-lg">
               Prenota un tavolo
             </button>
           </div>
+        </div>
+
+        {/* Indicatori del carosello (Pallini in basso) */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((_, i) => (
+            <div 
+              key={i}
+              className={`h-1 transition-all duration-500 ${i === currentSlide ? "w-8 bg-white" : "w-2 bg-white/50"}`}
+            />
+          ))}
         </div>
       </section>
 
