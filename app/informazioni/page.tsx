@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import Link from 'next/link'; // Risolve l'errore "Cannot find name 'Link'"
+import Link from 'next/link';
 
 export default function InformazioniPage() {
   return (
@@ -23,20 +23,30 @@ export default function InformazioniPage() {
         </div>
       </section>
 
-      {/* 2. CITAZIONE */}
-      <section className="py-24 px-4 bg-white text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#333333] mb-12">
-          Pensa, Credi, Sogna, Osa
-        </h2>
-        <div className="container mx-auto max-w-6xl grid md:grid-cols-2 gap-12 text-gray-600 text-left text-lg leading-relaxed">
-          <p>Il Tulipano, nato a Carpi nel 2010, è situato a due passi dal centro storico della città in via Aldo Moro Interna 1R. Da noi troverete un&apos;atmosfera calda e accogliente, quasi familiare.</p>
-          <p>Ma non mancano di certo le proposte a base di pesce e i piatti tradizionali emiliani. Al Tulipano verrete accolti con un sorriso e professionalità.</p>
+      {/* 2. SEZIONE CITAZIONE */}
+      <section className="py-24 px-4 bg-white">
+        <div className="container mx-auto max-w-6xl text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#333333] mb-12 tracking-tight">
+            Pensa, Credi, Sogna, Osa
+          </h2>
+          <div className="grid md:grid-cols-2 gap-12 text-gray-600 text-left text-lg leading-relaxed">
+            <p>
+              Il Tulipano, nato a Carpi nel 2010, è situato a due passi dal centro storico della città 
+              in via Aldo Moro Interna 1R, vicino allo stadio di Carpi. Da noi troverete un&apos;atmosfera 
+              calda e accogliente, quasi familiare.
+            </p>
+            <p>
+              Ogni dettaglio del nostro ristorante è stato pensato per rendere ancora più piacevole 
+              la vostra esperienza e per farvi godere ogni attimo passato insieme a noi.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 3. SEZIONE ARANCIONE: SPECIALITÀ + PRIVÈ */}
+      {/* 3. SEZIONE ARANCIONE: SPECIALITÀ, PRIVÈ E CATERING */}
       <section className="relative bg-[#FFA500] text-white pt-32 pb-40 mt-[-1px] overflow-hidden">
-        {/* Onda Superiore */}
+        
+        {/* Onda Superiore - Pennellata fluida */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20">
           <svg className="relative block w-[calc(160%+1.3px)] h-[80px] md:h-[150px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0V30c150,100,350,100,500,0S850-70,1200,30V0Z" fill="#FFFFFF"></path>
@@ -44,37 +54,86 @@ export default function InformazioniPage() {
         </div>
 
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <h2 className="text-5xl md:text-6xl font-serif italic text-center mb-20">Le Nostre specialità</h2>
-          
+          <h2 className="text-5xl md:text-6xl font-serif italic text-center mb-20 tracking-tight">
+            Le Nostre specialità
+          </h2>
+
           {/* Pizza e Cucina */}
           <div className="grid md:grid-cols-2 gap-16 mb-24">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h3 className="text-4xl font-bold italic font-serif">Pizza</h3>
-              <p className="opacity-95 leading-relaxed">La nostra pizza è frutto di una paziente lievitazione e della ricerca di ingredienti italiani selezionati. Ogni boccone è un&apos;esperienza unica.</p>
+              <p className="text-lg opacity-95 leading-relaxed">
+                La nostra pizza è frutto di una paziente lievitazione e della ricerca di ingredienti italiani selezionati. 
+                Cotto in forno a legna, il nostro impasto soffice e croccante non può che conquistarti al primo morso. 
+                Dalle pizze classiche tradizionali alle speciali che abbinano ingredienti particolari, fino ai nostri calzoni e siluri, 
+                ripieni super farciti e gustosi, ogni boccone è un’esperienza unica.
+              </p>
+              <p className="text-lg opacity-95 leading-relaxed italic">
+                Entrando nel dettaglio ci teniamo a sottolineare la qualità delle nostre materie prime, garantite dai nostri 
+                fornitori italiani con i quali vantiamo rapporti lavorativi decennali.
+              </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h3 className="text-4xl font-bold italic font-serif">Cucina</h3>
-              <p className="opacity-95 leading-relaxed">Al Tulipano anche la cucina occupa un posto di rilievo con piatti a base di pesce fresco e della tradizione emiliana.</p>
+              <p className="text-lg opacity-95 leading-relaxed">
+                Al Tulipano anche la cucina occupa un posto di rilievo. Il nostro menù propone piatti a base di pesce fresco, 
+                ma anche piatti della tradizione emiliana, come il gnocco fritto, i tortelli e i tortellini.
+              </p>
+              <p className="text-lg opacity-95 leading-relaxed">
+                La preparazione dei nostri dolci è totalmente artigianale e troverete dolci del giorno diversi ogni settimana. 
+                Inoltre per la pausa pranzo proponiamo un menù del giorno conveniente e variegato. Accettiamo anche buoni pasto Edenred.
+              </p>
             </div>
           </div>
 
           {/* BOX CTA MENÙ */}
-          <div className="relative w-full max-w-4xl mx-auto h-[400px] mb-16 rounded-sm overflow-hidden shadow-2xl">
-            <Image src="/filetto-di-carne-alla-griglia-tulipano.webp" alt="Menu" fill className="object-cover" />
+          <div className="relative w-full max-w-4xl mx-auto h-[400px] mb-24 rounded-sm overflow-hidden shadow-2xl group">
+            <Image 
+              src="/filetto-di-carne-alla-griglia-tulipano.webp" 
+              alt="Guarda il menù"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
-              <h3 className="text-4xl font-bold mb-6">Guarda il Menù</h3>
+              <h3 className="text-4xl md:text-5xl font-bold mb-6">Guarda il Menù</h3>
               <Link href="/menu">
-                <button className="bg-[#FFA500] px-10 py-3 font-bold uppercase tracking-widest">Vai Al Menù</button>
+                <button className="bg-[#FFA500] hover:bg-[#FF8C00] text-white px-10 py-3 rounded-sm font-bold uppercase tracking-widest transition-all">
+                  Vai Al Menù
+                </button>
               </Link>
             </div>
           </div>
 
-          {/* PRIVÈ */}
-          <div className="max-w-4xl mx-auto space-y-6">
-            <h3 className="text-4xl font-bold italic font-serif">Privè</h3>
-            <p className="opacity-95 leading-relaxed text-lg">La nostra sala privè Tulipano è perfetta per chi cerca un ambiente riservato e raffinato dove festeggiare occasioni speciali. Offre un&apos;esperienza esclusiva con servizio personalizzato.</p>
-            <div className="pt-6 border-t border-white/20">
-              <p className="text-xl font-bold">059 9110390 — ristorantetulipanocarpi@gmail.com</p>
+          {/* PRIVÈ E CATERING */}
+          <div className="max-w-4xl mx-auto space-y-20">
+            {/* Blocco Privè */}
+            <div className="space-y-6">
+              <h3 className="text-4xl font-bold italic font-serif">Privè</h3>
+              <p className="text-lg opacity-95 leading-relaxed">
+                La nostra sala privè Tulipano è perfetta per chi cerca un ambiente riservato e raffinato dove festeggiare 
+                occasioni speciali come compleanni, lauree, battesimi, cresimi e altri eventi privati. La sala è interamente 
+                riservabile e offre un’esperienza esclusiva grazie al servizio personalizzato che include un cameriere 
+                dedicato solo agli ospiti della sala, un menù personalizzato e decorazioni su misura.
+              </p>
+              <div className="pt-4 border-t border-white/20">
+                <p className="text-sm uppercase tracking-widest opacity-80">Per maggiori informazioni e prenotazioni:</p>
+                <p className="text-xl font-bold mt-1">059 9110390 – ristorantetulipanocarpi@gmail.com</p>
+              </div>
+            </div>
+
+            {/* Blocco Catering */}
+            <div className="space-y-6">
+              <h3 className="text-4xl font-bold italic font-serif">Catering</h3>
+              <p className="text-lg opacity-95 leading-relaxed">
+                Il Tulipano offre anche il servizio di catering per eventi in loco o in esterna. Il nostro catering garantisce 
+                piatti preparati con ingredienti freschi e selezionati su misura. Il menù può essere personalizzato per ogni 
+                tipo di evento, accompagnato dalla professionalità del nostro staff sempre pronto a curare ogni aspetto, 
+                dall’allestimento alla preparazione dei piatti.
+              </p>
+              <div className="pt-4 border-t border-white/20">
+                <p className="text-sm uppercase tracking-widest opacity-80">Per maggiori informazioni e prenotazioni:</p>
+                <p className="text-xl font-bold mt-1">059 9110390 – ristorantetulipanocarpi@gmail.com</p>
+              </div>
             </div>
           </div>
         </div>
@@ -87,14 +146,16 @@ export default function InformazioniPage() {
         </div>
       </section>
 
-      {/* 4. FOOTER (Ripreso dallo screenshot) */}
+      {/* 4. FOOTER */}
       <footer className="bg-white py-20 px-4 text-[#333333]">
         <div className="container mx-auto max-w-6xl grid md:grid-cols-3 gap-12 text-sm uppercase tracking-widest">
           <div>
             <h4 className="font-bold mb-6 text-[#800020]">Dove Siamo</h4>
             <p>Via A. Moro Interna, 1R</p>
             <p className="mb-4">41012 Carpi (MO)</p>
-            <Link href="#" className="text-[#800020] border-b border-[#800020]">Vai alle indicazioni →</Link>
+            <Link href="https://maps.google.com" className="text-[#800020] border-b border-[#800020] pb-1">
+              Vai alle indicazioni →
+            </Link>
           </div>
           <div>
             <h4 className="font-bold mb-6 text-[#800020]">Orari</h4>
@@ -106,15 +167,15 @@ export default function InformazioniPage() {
             <h4 className="font-bold mb-6 text-[#800020]">Contatti</h4>
             <p className="mb-4 lowercase opacity-50 text-[10px]">Enjoy SRL - P.IVA 03831040369</p>
             <div className="flex gap-4">
-              <div className="w-8 h-8 bg-[#800020] rounded-full flex items-center justify-center text-white font-bold">FB</div>
-              <div className="w-8 h-8 bg-[#800020] rounded-full flex items-center justify-center text-white font-bold">IG</div>
+              <div className="w-10 h-10 bg-[#800020] rounded-full flex items-center justify-center text-white text-xs font-bold">FB</div>
+              <div className="w-10 h-10 bg-[#800020] rounded-full flex items-center justify-center text-white text-xs font-bold">IG</div>
             </div>
           </div>
         </div>
-        <div className="text-center mt-20 text-[10px] opacity-40 uppercase tracking-[0.3em]">
+        <div className="text-center mt-20 text-[10px] opacity-40 uppercase tracking-[0.4em]">
           © 2026 Il Tulipano — Excellence in Carpi — Developed with Next.js
         </div>
       </footer>
-    </main> // Chiude correttamente il tag <main> risolvendo l'errore di VS Code
+    </main>
   );
 }
