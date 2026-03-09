@@ -42,12 +42,13 @@ export default function InformazioniPage() {
         </div>
       </section>
 
-{/* 3. SEZIONE: LE NOSTRE SPECIALITÀ (ARANCIONE CON ONDE SOPRA E SOTTO) */}
+{/* 3. SEZIONE: LE NOSTRE SPECIALITÀ (ARANCIONE CON ONDE SOFT) */}
       <section className="relative bg-[#FFA500] text-white pt-32 pb-32 mt-[-1px]">
-        {/* SVG Onda Superiore - Corretta per fluidità */}
+        
+        {/* SVG Onda Superiore - Curve Omogenee */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20">
-          <svg className="relative block w-full h-[60px] md:h-[120px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,52.38,57.18,28.73,114,51.18,174.6,50.1,64.2-.8,126.8-23.71,185.1-55.8,59.2-32.6,120.3-51.7,189.6-53.5l67.7,1.3V0Z" fill="#FFFFFF"></path>
+          <svg className="relative block w-[calc(135%+1.3px)] h-[80px] md:h-[150px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V15.89C156.4,133.4,331.3,1.6,480.3,51.8s267,112.5,417.8,49.6S1100.2,5.1,1200,60V0Z" fill="#FFFFFF"></path>
           </svg>
         </div>
 
@@ -88,10 +89,10 @@ export default function InformazioniPage() {
           </div>
         </div>
 
-        {/* SVG Onda Inferiore - Per chiudere la sezione in modo fluido */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
-          <svg className="relative block w-full h-[60px] md:h-[100px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,52.38,57.18,28.73,114,51.18,174.6,50.1,64.2-.8,126.8-23.71,185.1-55.8,59.2-32.6,120.3-51.7,189.6-53.5l67.7,1.3V0Z" fill="#FFFFFF"></path>
+        {/* SVG Onda Inferiore - Specchiata e Morbida */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+          <svg className="relative block w-[calc(135%+1.3px)] h-[80px] md:h-[150px] rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V15.89C156.4,133.4,331.3,1.6,480.3,51.8s267,112.5,417.8,49.6S1100.2,5.1,1200,60V0Z" fill="#FFFFFF"></path>
           </svg>
         </div>
       </section>
