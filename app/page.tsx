@@ -212,53 +212,45 @@ export default function Home() {
       </section>
 
 
-{/* 5.5 SEZIONE CTA PRENOTAZIONE CON PIZZA RIDOTTA A DESTRA */}
-      {/* Manteniamo overflow-visible per permettere alla pizza di sbordare */}
-      <section className="relative py-20 bg-[#6D1919] text-center px-4 overflow-visible">
-        
-        {/* Immagine Pizza Footer a destra - Ridotta e riposizionata */}
-        {/* 1. Ridotta la larghezza a 300px (w-[300px]) per l'immagine.
-          2. Regolato bottom-[-60px] per un effetto sovrapposizione più sottile.
-          3. hidden lg:block: appare solo su schermi grandi.
-        */}
-        <div className="absolute right-0 bottom-[-60px] z-30 hidden lg:block w-[300px] h-auto">
-          <Image 
-            src="/pizzafooter.webp" 
-            alt="Dettaglio Pizza" 
-            width={300} // Dimensioni fisiche dell'immagine ridotte
-            height={300} // Altezza proporzionale
-            className="object-contain"
-          />
-        </div>
+{/* 5.5 SEZIONE CTA PRENOTAZIONE */}
+{/* - Cambiato overflow-hidden in overflow-visible (fondamentale!) 
+   - Aggiunto z-20 per stare sopra il footer
+*/}
+<section className="relative py-20 bg-[#6D1919] text-center px-4 overflow-visible z-20">
+  
+  {/* Contenitore Pizza ridotto e posizionato per scavalcare il bordo */}
+  <div className="absolute right-[-20px] bottom-[-80px] z-50 hidden lg:block w-[280px]">
+    <Image 
+      src="/pizzafooter.webp" 
+      alt="Dettaglio Pizza" 
+      width={280}
+      height={280}
+      className="object-contain drop-shadow-2xl" 
+    />
+  </div>
 
-        {/* Contenuto CTA (Invariato) */}
-        <div className="max-w-3xl mx-auto relative z-20">
-          <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 tracking-tighter border-b-2 border-white inline-block pb-2">
-            Riserva un tavolo
-          </h2>
-          
-          <p className="text-xl text-white/90 mb-10 leading-relaxed tracking-tight">
-            Prenota ora e siediti a tavola con le persone che più contano per te. 
-            Vi aspetta un&apos;esperienza culinaria che siamo sicuri vi lascerà a bocca aperta!
-          </p>
+  <div className="max-w-3xl mx-auto relative z-30">
+    <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 tracking-tighter border-b-2 border-white inline-block pb-2">
+      Riserva un tavolo
+    </h2>
+    
+    <p className="text-xl text-white/90 mb-10 leading-relaxed tracking-tight">
+      Prenota ora e siediti a tavola con le persone che più contano per te. 
+      Vi aspetta un&apos;esperienza culinaria che siamo sicuri vi lascerà a bocca aperta!
+    </p>
 
-          <div className="flex flex-col items-center gap-4">
-            <button className="bg-[#E5B54F] hover:bg-[#D4A43D] text-white px-10 py-4 rounded-sm font-bold transition-all uppercase tracking-[0.2em] shadow-lg">
-              Prenota un tavolo
-            </button>
+    <div className="flex flex-col items-center gap-4">
+      <button className="bg-[#E5B54F] hover:bg-[#D4A43D] text-white px-10 py-4 rounded-sm font-bold transition-all uppercase tracking-[0.2em] shadow-lg">
+        Prenota un tavolo
+      </button>
 
-            <div className="mt-4">
-              <p className="text-white/70 italic tracking-tight">o Prenota il tuo spazio chiamando allo</p>
-              <a 
-                href="tel:0599110390" 
-                className="text-3xl font-bold text-white hover:text-[#E5B54F] transition-colors"
-              >
-                059 9110390
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="mt-4">
+        <p className="text-white/70 italic tracking-tight">o Prenota il tuo spazio chiamando allo</p>
+        <a href="tel:0599110390" className="text-3xl font-bold text-white">059 9110390</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
       {/* 6. FOOTER (Colori Sito Originale) */}
