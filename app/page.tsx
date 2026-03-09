@@ -213,19 +213,20 @@ export default function Home() {
 
 
 {/* 5.5 SEZIONE CTA PRENOTAZIONE */}
-{/* - Cambiato overflow-hidden in overflow-visible (fondamentale!) 
-   - Aggiunto z-20 per stare sopra il footer
-*/}
 <section className="relative py-20 bg-[#6D1919] text-center px-4 overflow-visible z-20">
   
-  {/* Contenitore Pizza ridotto e posizionato per scavalcare il bordo */}
-  <div className="absolute right-[-20px] bottom-[-80px] z-50 hidden lg:block w-[280px]">
+  {/* Immagine Pizza: 
+      - bottom-[-140px]: la spinge molto più in basso sopra il footer
+      - right-[-30px]: la sposta leggermente verso l'esterno per un look più dinamico
+  */}
+  <div className="absolute right-[-30px] bottom-[-140px] z-50 hidden lg:block w-[320px]">
     <Image 
       src="/pizzafooter.webp" 
       alt="Dettaglio Pizza" 
-      width={280}
-      height={280}
+      width={320}
+      height={320}
       className="object-contain drop-shadow-2xl" 
+      priority
     />
   </div>
 
@@ -246,7 +247,9 @@ export default function Home() {
 
       <div className="mt-4">
         <p className="text-white/70 italic tracking-tight">o Prenota il tuo spazio chiamando allo</p>
-        <a href="tel:0599110390" className="text-3xl font-bold text-white">059 9110390</a>
+        <a href="tel:0599110390" className="text-3xl font-bold text-white hover:text-[#E5B54F] transition-colors">
+          059 9110390
+        </a>
       </div>
     </div>
   </div>
