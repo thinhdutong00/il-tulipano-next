@@ -42,18 +42,18 @@ export default function InformazioniPage() {
         </div>
       </section>
 
-{/* 3. SEZIONE: LE NOSTRE SPECIALITÀ (ARANCIONE CON ONDE SOFT) */}
-      <section className="relative bg-[#FFA500] text-white pt-32 pb-32 mt-[-1px]">
+{/* 3. SEZIONE: LE NOSTRE SPECIALITÀ (ARANCIONE CON ONDE ORGANICHE) */}
+      <section className="relative bg-[#FFA500] text-white pt-32 pb-40 mt-[-1px] overflow-hidden">
         
-        {/* SVG Onda Superiore - Curve Omogenee */}
+        {/* SVG Onda Superiore - Effetto Pennellata Fluida */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20">
-          <svg className="relative block w-[calc(135%+1.3px)] h-[80px] md:h-[150px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V15.89C156.4,133.4,331.3,1.6,480.3,51.8s267,112.5,417.8,49.6S1100.2,5.1,1200,60V0Z" fill="#FFFFFF"></path>
+          <svg className="relative block w-[calc(150%+1.3px)] h-[80px] md:h-[130px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V15.89c156.4,133.4,331.3-88.6,480.3,1.8s267,112.5,417.8,49.6S1100.2,5.1,1200,40V0Z" fill="#FFFFFF"></path>
           </svg>
         </div>
 
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <h2 className="text-5xl md:text-6xl font-medium text-center mb-20 tracking-tight">
+          <h2 className="text-5xl md:text-6xl font-medium text-center mb-20 tracking-tight font-serif italic">
             Le Nostre specialità
           </h2>
 
@@ -61,38 +61,35 @@ export default function InformazioniPage() {
             {/* Colonna Pizza */}
             <div className="space-y-6">
               <h3 className="text-4xl font-bold italic font-serif">Pizza</h3>
-              <p className="text-lg opacity-90 leading-relaxed">
+              <p className="text-lg opacity-95 leading-relaxed">
                 La nostra pizza è frutto di una paziente lievitazione e della ricerca di ingredienti italiani selezionati. 
                 Cotto in forno a legna, il nostro impasto soffice e croccante non può che conquistarti al primo morso. 
-                Dalle pizze classiche tradizionali alle speciali che abbinano ingredienti particolari, fino ai nostri calzoni e siluri, 
-                ripieni super farciti e gustosi, ogni boccone è un&apos;esperienza unica.
+                Dalle pizze classiche tradizionali alle speciali, ogni boccone è un&apos;esperienza unica.
               </p>
-              <p className="text-lg opacity-90 leading-relaxed">
-                Entrando nel dettaglio ci teniamo a sottolineare la qualità delle nostre materie prime, garantite dai nostri fornitori 
-                italiani con i quali vantiamo rapporti lavorativi decennali.
+              <p className="text-lg opacity-95 leading-relaxed">
+                Ci teniamo a sottolineare la qualità delle nostre materie prime, garantite dai nostri fornitori italiani.
               </p>
             </div>
 
             {/* Colonna Cucina */}
             <div className="space-y-6">
               <h3 className="text-4xl font-bold italic font-serif">Cucina</h3>
-              <p className="text-lg opacity-90 leading-relaxed">
+              <p className="text-lg opacity-95 leading-relaxed">
                 Al Tulipano anche la cucina occupa un posto di rilievo. Il nostro menù propone piatti a base di pesce fresco, 
-                ma anche piatti della tradizione emiliana, come il gnocco fritto, i tortelli e i tortellini.
+                ma anche piatti della tradizione emiliana, come il gnocco fritto e i tortellini.
               </p>
-              <p className="text-lg opacity-90 leading-relaxed">
-                La preparazione dei nostri dolci è totalmente artigianale e troverete dolci del giorno diversi ogni settimana. 
-                Inoltre per la pausa pranzo proponiamo un menù del giorno conveniente e variegato perfetto per chi desidera 
-                un buon piatto nella frenesia della giornata lavorativa. Accettiamo anche buoni pasto Edenred.
+              <p className="text-lg opacity-95 leading-relaxed">
+                La preparazione dei nostri dolci è totalmente artigianale. Per la pausa pranzo proponiamo un menù del giorno 
+                conveniente e variegato. Accettiamo anche buoni pasto Edenred.
               </p>
             </div>
           </div>
         </div>
 
-        {/* SVG Onda Inferiore - Specchiata e Morbida */}
+        {/* SVG Onda Inferiore - Morbida e Specchiata */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-          <svg className="relative block w-[calc(135%+1.3px)] h-[80px] md:h-[150px] rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0V15.89C156.4,133.4,331.3,1.6,480.3,51.8s267,112.5,417.8,49.6S1100.2,5.1,1200,60V0Z" fill="#FFFFFF"></path>
+          <svg className="relative block w-[calc(150%+1.3px)] h-[80px] md:h-[130px] rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V15.89c156.4,133.4,331.3-88.6,480.3,1.8s267,112.5,417.8,49.6S1100.2,5.1,1200,40V0Z" fill="#FFFFFF"></path>
           </svg>
         </div>
       </section>
