@@ -2,38 +2,30 @@
 import Image from 'next/image';
 
 export default function GalleriaPage() {
-  // Array di immagini utilizzando quelle che abbiamo già nel progetto
+  // Array di 20 immagini
+  // Sostituisci i percorsi quando carichi le nuove foto in public/
   const galleriaImages = [
-    { 
-      src: "/tulipanocarpi-interno-1.webp", 
-      alt: "Interno del ristorante", 
-      className: "md:col-span-2 md:row-span-2" // Immagine grande
-    },
-    { 
-      src: "/pizza-acciughe.webp", 
-      alt: "La nostra pizza artigianale", 
-      className: "md:col-span-1 md:row-span-1" 
-    },
-    { 
-      src: "/piatto-di-pasta-gambero.webp", 
-      alt: "Specialità di pesce", 
-      className: "md:col-span-1 md:row-span-1" 
-    },
-    { 
-      src: "/filetto-di-carne-alla-griglia-tulipano.webp", 
-      alt: "Secondi piatti di qualità", 
-      className: "md:col-span-1 md:row-span-2" // Immagine verticale
-    },
-    { 
-      src: "/scaffale-dei-vini-tulipano.webp", 
-      alt: "La nostra selezione di vini", 
-      className: "md:col-span-2 md:row-span-1" // Immagine orizzontale
-    },
-    { 
-      src: "/tulipanofossoli-card3.webp", 
-      alt: "Dettagli Tulipano", 
-      className: "md:col-span-1 md:row-span-1" 
-    }
+    { src: "/tulipanocarpi-interno-1.webp", size: "md:col-span-2 md:row-span-2" },
+    { src: "/pizza-acciughe.webp", size: "" },
+    { src: "/piatto-di-pasta-gambero.webp", size: "" },
+    { src: "/filetto-di-carne-alla-griglia-tulipano.webp", size: "md:row-span-2" },
+    { src: "/scaffale-dei-vini-tulipano.webp", size: "md:col-span-2" },
+    { src: "/tulipanofossoli-card3.webp", size: "" },
+    { src: "/nuovo-menù-tulipano-carpi-_14_.jpg", size: "" },
+    // Da qui in poi usiamo placeholder o ripetizioni che sostituirai tu
+    { src: "/pizza-acciughe.webp", size: "md:col-span-1" }, 
+    { src: "/tulipanocarpi-interno-1.webp", size: "" },
+    { src: "/piatto-di-pasta-gambero.webp", size: "md:col-span-2" },
+    { src: "/filetto-di-carne-alla-griglia-tulipano.webp", size: "" },
+    { src: "/scaffale-dei-vini-tulipano.webp", size: "" },
+    { src: "/tulipanofossoli-card3.webp", size: "md:row-span-2" },
+    { src: "/pizza-acciughe.webp", size: "" },
+    { src: "/piatto-di-pasta-gambero.webp", size: "" },
+    { src: "/tulipanocarpi-interno-1.webp", size: "md:col-span-2" },
+    { src: "/scaffale-dei-vini-tulipano.webp", size: "" },
+    { src: "/filetto-di-carne-alla-griglia-tulipano.webp", size: "" },
+    { src: "/pizza-acciughe.webp", size: "" },
+    { src: "/piatto-di-pasta-gambero.webp", size: "" },
   ];
 
   return (
@@ -42,55 +34,47 @@ export default function GalleriaPage() {
         
         {/* INTESTAZIONE */}
         <div className="text-center mb-16">
-          <h2 className="text-[#800020] uppercase tracking-[0.4em] text-xs font-bold mb-3">
-            L'Esperienza Visiva
+          <h2 className="text-[#800020] uppercase tracking-[0.4em] text-[10px] font-bold mb-3">
+            Uno sguardo al nostro mondo
           </h2>
           <h1 className="text-5xl md:text-7xl font-serif italic mb-6 text-[#333333]">
-            Galleria
+            La Galleria
           </h1>
-          <div className="w-24 h-1 bg-[#800020] mx-auto"></div>
+          <div className="w-20 h-1 bg-[#800020] mx-auto"></div>
         </div>
 
-        {/* GRIGLIA FOTOGRAFICA */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
+        {/* GRIGLIA MASONRY A 20 FOTO */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] md:auto-rows-[200px]">
           {galleriaImages.map((img, index) => (
             <div 
               key={index} 
-              className={`relative overflow-hidden group rounded-sm shadow-sm hover:shadow-2xl transition-all duration-500 ${img.className}`}
+              className={`relative overflow-hidden group shadow-sm bg-gray-100 ${img.size}`}
             >
               <Image
                 src={img.src}
-                alt={img.alt}
+                alt={`Galleria immagine ${index + 1}`}
                 fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              
-              {/* Overlay con testo che appare al passaggio del mouse */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center p-6 text-center">
-                <p className="text-white font-serif italic text-2xl border-b border-white/30 pb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  {img.alt}
-                </p>
-              </div>
+              {/* Overlay minimalista al passaggio del mouse */}
+              <div className="absolute inset-0 bg-[#800020]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
         </div>
 
-        {/* FOOTER CALL TO ACTION */}
-        <div className="mt-24 text-center">
-          <p className="text-gray-400 uppercase tracking-widest text-sm mb-8">
-            Seguici sui social per le novità quotidiane
+        {/* CTA FINALE */}
+        <div className="mt-20 text-center border-t border-gray-100 pt-16">
+          <p className="text-gray-400 font-serif italic text-lg mb-6">
+            Ti aspettiamo per vivere queste atmosfere dal vivo.
           </p>
-          <div className="flex justify-center gap-10">
-            <a href="#" className="text-[#800020] font-bold border-b-2 border-transparent hover:border-[#800020] transition-all pb-1 uppercase tracking-tighter text-sm">
-              Instagram
-            </a>
-            <a href="#" className="text-[#800020] font-bold border-b-2 border-transparent hover:border-[#800020] transition-all pb-1 uppercase tracking-tighter text-sm">
-              Facebook
-            </a>
-          </div>
+          <a 
+            href="tel:0599110390"
+            className="inline-block bg-[#800020] text-white px-10 py-4 uppercase tracking-[0.2em] font-bold text-xs hover:bg-black transition-colors"
+          >
+            Prenota un Tavolo
+          </a>
         </div>
-
       </div>
     </main>
   );
