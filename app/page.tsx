@@ -318,7 +318,7 @@ export default function Home() {
       </footer>
     </main>
   );
-} 
+}
 
 // DEFINIZIONE DI MENUITEM (Mettila proprio alla fine di tutto, fuori da Home)
 function MenuItem({ name, price }: { name: string, price: string }) {
