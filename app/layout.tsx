@@ -60,7 +60,7 @@ export default function RootLayout({
                         className="block px-6 py-3 hover:bg-gray-50 hover:text-[#800020] transition normal-case font-semibold text-[13px] border-b border-gray-100"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        Menù Completo
+                        Il Nostro Menù
                       </Link>
                       <Link 
                         href="/pizza-del-mese" 
