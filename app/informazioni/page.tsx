@@ -237,38 +237,7 @@ export default function InformazioniPage() {
           </div>
         </div>
       </section>
-
-
-      {/* 4. FOOTER */}
-      <footer className="bg-white py-20 px-4 text-[#333333]">
-        <div className="container mx-auto max-w-6xl grid md:grid-cols-3 gap-12 text-sm uppercase tracking-widest">
-          <div>
-            <h4 className="font-bold mb-6 text-[#800020]">Dove Siamo</h4>
-            <p>Via A. Moro Interna, 1R</p>
-            <p className="mb-4">41012 Carpi (MO)</p>
-            <Link href="https://maps.google.com" className="text-[#800020] border-b border-[#800020] pb-1">
-              Vai alle indicazioni →
-            </Link>
-          </div>
-          <div>
-            <h4 className="font-bold mb-6 text-[#800020]">Orari</h4>
-            <div className="flex justify-between mb-2"><span>Pranzo:</span><span>12:00 / 15:00</span></div>
-            <div className="flex justify-between"><span>Cena:</span><span>18:00 / 00:00</span></div>
-            <p className="mt-4 italic text-center lowercase text-gray-400">Aperto tutti i giorni</p>
-          </div>
-          <div>
-            <h4 className="font-bold mb-6 text-[#800020]">Contatti</h4>
-            <p className="mb-4 lowercase opacity-50 text-[10px]">Enjoy SRL - P.IVA 03831040369</p>
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-[#800020] rounded-full flex items-center justify-center text-white text-xs font-bold">FB</div>
-              <div className="w-10 h-10 bg-[#800020] rounded-full flex items-center justify-center text-white text-xs font-bold">IG</div>
-            </div>
-          </div>
-        </div>
-        <div className="text-center mt-20 text-[10px] opacity-40 uppercase tracking-[0.4em]">
-          © 2026 Il Tulipano — Excellence in Carpi — Developed with Next.js
-        </div>
-      </footer>
+      
     </main>
   );
 }
