@@ -211,6 +211,40 @@ export default function Home() {
         </div>
       </section>
 
+
+{/* 5.5 SEZIONE CTA PRENOTAZIONE */}
+      <section className="py-20 bg-[#F9F6F2] text-center px-4 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-serif text-[#333333] mb-6 tracking-tighter">
+            Riserva un tavolo
+          </h2>
+          
+          <p className="text-xl text-gray-700 mb-10 leading-relaxed tracking-tight">
+            Prenota ora e siediti a tavola con le persone che più contano per te. 
+            Vi aspetta un&apos;esperienza culinaria che siamo sicuri vi lascerà a bocca aperta!
+          </p>
+
+          <div className="flex flex-col items-center gap-4">
+            {/* Pulsante Principale */}
+            <button className="bg-[#800020] hover:bg-[#600018] text-white px-10 py-4 rounded-sm font-bold transition-all uppercase tracking-[0.2em] shadow-lg">
+              Prenota un tavolo
+            </button>
+
+            {/* Testo Secondario con Numero */}
+            <div className="mt-4">
+              <p className="text-gray-500 italic">o Prenota il tuo spazio chiamando allo</p>
+              <a 
+                href="tel:0599110390" 
+                className="text-2xl font-bold text-[#333333] hover:text-[#800020] transition-colors"
+              >
+                059 9110390
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* 6. FOOTER (Colori Sito Originale) */}
       <footer className="bg-[#111111] py-16 text-gray-400 border-t border-[#800020]/30">
         <div className="container mx-auto px-4 grid md:grid-cols-3 gap-12 text-sm">
