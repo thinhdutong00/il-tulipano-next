@@ -233,8 +233,7 @@ export default function InformazioniPage() {
 
           </div>
         </div>
-      </section>
-
+</section>
     </main>
   );
 }
