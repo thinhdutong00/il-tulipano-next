@@ -147,13 +147,14 @@ export default function Home() {
         </div>
       </section>
 
-{/* 4. PREVIEW MENU */}
+{/* 4. PREVIEW MENU (Colori armonizzati senza nero) */}
       <section className="py-16 bg-[#6D1919] text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-serif text-center mb-12 text-[#D4AF37]">I Nostri Piatti</h2>
+          <h2 className="text-3xl font-serif text-center mb-12 text-[#D4AF37]">
+            I Nostri Piatti
+          </h2>
           
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-8 max-w-5xl mx-auto">
-            {/* Righe esistenti */}
             <MenuItem name="Gnocco Fritto con Affettati Misti" price="14,00€" />
             <MenuItem name="Tortelli Verdi Vecchia Modena" price="12,00€" />
             <MenuItem name="Carbonara Romana" price="12,00€" />
@@ -162,17 +163,14 @@ export default function Home() {
             <MenuItem name="Spaghettone allo Scoglio" price="19,00€" />
             <MenuItem name="Risotto ai Frutti di Mare" price="18,00€" />
             <MenuItem name="Fritto Misto di Pesce" price="18,00€" />
-
-            {/* Nuove due righe (4 piatti) */}
             <MenuItem name="Tagliata di Manzo al Rosmarino" price="22,00€" />
             <MenuItem name="Tortelloni Burro e Oro" price="13,00€" />
             <MenuItem name="Pizza Gourmet del Mese" price="12,50€" />
             <MenuItem name="Grigliata Reale di Pesce" price="26,00€" />
           </div>
 
-          {/* Pulsante per il Menù Intero */}
           <div className="text-center mt-16">
-            <button className="border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black px-10 py-3 rounded-sm font-bold transition-all duration-300 uppercase tracking-[0.2em] text-sm">
+            <button className="border-2 border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#6D1919] px-10 py-3 rounded-sm font-bold transition-all duration-300 uppercase tracking-[0.2em] text-sm bg-transparent">
               Guarda tutto il menù
             </button>
           </div>
