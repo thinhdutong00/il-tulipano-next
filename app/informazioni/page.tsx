@@ -42,12 +42,12 @@ export default function InformazioniPage() {
         </div>
       </section>
 
-      {/* 3. SEZIONE: LE NOSTRE SPECIALITÀ (ARANCIONE CON ONDE) */}
-      <section className="relative bg-[#FFA500] text-white pt-20 pb-32">
-        {/* SVG Onda Superiore */}
-        <div className="absolute top-0 left-0 w-full overflow-hidden rotate-180 leading-[0]">
-          <svg className="relative block w-full h-[60px] md:h-[100px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V120c67.81-23.09,144.29-30.7,214.34-12.21C260,111,313,95.53,356,79Z" fill="#FFFFFF"></path>
+{/* 3. SEZIONE: LE NOSTRE SPECIALITÀ (ARANCIONE CON ONDE SOPRA E SOTTO) */}
+      <section className="relative bg-[#FFA500] text-white pt-32 pb-32 mt-[-1px]">
+        {/* SVG Onda Superiore - Corretta per fluidità */}
+        <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20">
+          <svg className="relative block w-full h-[60px] md:h-[120px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,52.38,57.18,28.73,114,51.18,174.6,50.1,64.2-.8,126.8-23.71,185.1-55.8,59.2-32.6,120.3-51.7,189.6-53.5l67.7,1.3V0Z" fill="#FFFFFF"></path>
           </svg>
         </div>
 
@@ -59,7 +59,7 @@ export default function InformazioniPage() {
           <div className="grid md:grid-cols-2 gap-16">
             {/* Colonna Pizza */}
             <div className="space-y-6">
-              <h3 className="text-4xl font-bold">Pizza</h3>
+              <h3 className="text-4xl font-bold italic font-serif">Pizza</h3>
               <p className="text-lg opacity-90 leading-relaxed">
                 La nostra pizza è frutto di una paziente lievitazione e della ricerca di ingredienti italiani selezionati. 
                 Cotto in forno a legna, il nostro impasto soffice e croccante non può che conquistarti al primo morso. 
@@ -74,7 +74,7 @@ export default function InformazioniPage() {
 
             {/* Colonna Cucina */}
             <div className="space-y-6">
-              <h3 className="text-4xl font-bold">Cucina</h3>
+              <h3 className="text-4xl font-bold italic font-serif">Cucina</h3>
               <p className="text-lg opacity-90 leading-relaxed">
                 Al Tulipano anche la cucina occupa un posto di rilievo. Il nostro menù propone piatti a base di pesce fresco, 
                 ma anche piatti della tradizione emiliana, come il gnocco fritto, i tortelli e i tortellini.
@@ -86,6 +86,13 @@ export default function InformazioniPage() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* SVG Onda Inferiore - Per chiudere la sezione in modo fluido */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180">
+          <svg className="relative block w-full h-[60px] md:h-[100px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5,73.84-4.36,147.54,16.88,218.2,52.38,57.18,28.73,114,51.18,174.6,50.1,64.2-.8,126.8-23.71,185.1-55.8,59.2-32.6,120.3-51.7,189.6-53.5l67.7,1.3V0Z" fill="#FFFFFF"></path>
+          </svg>
         </div>
       </section>
 
