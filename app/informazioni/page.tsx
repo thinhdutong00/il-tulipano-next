@@ -211,10 +211,10 @@ export default function InformazioniPage() {
                   src="/tulipanofossoli-card3.webp" 
                   alt="Il Tulipano Fossoli" 
                   fill 
-                  className="object-cover rounded-sm shadow-lg" 
+                  className="object-contain rounded-sm shadow-lg" 
                 />
               </div>
-</div>
+            </div>
           </div>
         </div>
       </section>
