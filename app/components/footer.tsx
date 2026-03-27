@@ -115,7 +115,7 @@ export default function Footer() {
           color: 'rgba(255, 255, 255, 0.6)',
           margin: 0
         }}>
-          © {currentYear} Il Tulipano — Excellence in Carpi — Developed with Next.js
+          © {currentYear} Il Tulipano - ENJOY SRL Carpi (MO) via L. A. Muratori, 47, CAP 41012 P. IVA 03831040369 - REA MO - 421443 - Powered by Mago Digital
         </p>
       </div>
     </footer>
