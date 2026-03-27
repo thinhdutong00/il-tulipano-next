@@ -11,23 +11,25 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  // Colori brand
-  const mattone = '#800020';
+  // Colori brand (usando il bordeaux e panna salvati)
+  const mattone = '#642d3a'; 
   const panna = '#ffefcc';
 
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
+        // Se scendo oltre i 100px nascondo, se risalgo mostro
         if (window.scrollY > lastScrollY && window.scrollY > 100) {
-          setIsVisible(false); // Nasconde se scorri giù
+          setIsVisible(false);
         } else {
-          setIsVisible(true); // Mostra se scorri su
+          setIsVisible(true);
         }
         setLastScrollY(window.scrollY);
       }
     };
 
     window.addEventListener('scroll', controlNavbar);
+    // Blocca lo scroll della pagina quando il menu mobile è aperto
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
 
     return () => window.removeEventListener('scroll', controlNavbar);
@@ -51,46 +53,68 @@ export default function Header() {
           alignItems: 'center'
         }}
       >
-        <div style={{ width: '92%', maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ 
+          width: '92%', 
+          maxWidth: '1400px', 
+          margin: '0 auto', 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center' 
+        }}>
           
-          {/* LOGO */}
-          <Link href="/">
-            <Image src="/logo.png" alt="Il Tulipano" width={140} height={50} priority style={{ objectFit: 'contain' }} />
-          </Link>
+          {/* 1. LOGO (Sinistra) */}
+          <div style={{ flex: '1', display: 'flex', justifyContent: 'flex-start' }}>
+            <Link href="/">
+              <Image src="/logo.png" alt="Il Tulipano" width={140} height={50} priority style={{ objectFit: 'contain' }} />
+            </Link>
+          </div>
 
-          {/* NAVBAR DESKTOP */}
-          <nav className="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.2em]">
-            <Link href="/" className="hover:text-[#E5B54F] transition text-[#333333]">Home</Link>
-            <Link href="/informazioni" className="hover:text-[#E5B54F] transition text-[#333333]">Informazioni</Link>
+          {/* 2. NAVBAR (Centro - Solo Desktop) */}
+          <nav className="hidden lg:flex" style={{ flex: '2', justifyContent: 'center', gap: '30px' }}>
+            <Link href="/" style={navLinkStyle}>Home</Link>
+            <Link href="/informazioni" style={navLinkStyle}>Informazioni</Link>
             
-            {/* Dropdown Menù */}
             <div className="relative group" onMouseEnter={() => setActiveDropdown('menu')} onMouseLeave={() => setActiveDropdown(null)}>
-              <button className="flex items-center gap-1 hover:text-[#E5B54F] transition uppercase outline-none text-[#333333]">
+              <button style={{ ...navLinkStyle, display: 'flex', alignItems: 'center', gap: '4px', background: 'none', border: 'none', cursor: 'pointer' }}>
                 Menù <ChevronDown size={12} />
               </button>
               {activeDropdown === 'menu' && (
-                <div className="absolute top-full left-0 pt-4 w-48 transition-all">
-                  <div className="bg-white shadow-xl border-t-4 border-[#800020] py-2 rounded-sm">
-                    <Link href="/menu" className="block px-6 py-3 hover:bg-gray-50 text-[13px] normal-case text-[#333333]">Menù Completo</Link>
-                    <Link href="/pizza-del-mese" className="block px-6 py-3 hover:bg-gray-50 text-[13px] normal-case text-[#333333]">Pizza del Mese</Link>
+                <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', paddingTop: '15px', width: '200px' }}>
+                  <div style={{ backgroundColor: '#fff', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', borderTop: `4px solid ${mattone}`, padding: '10px 0', borderRadius: '4px' }}>
+                    <Link href="/menu" className="dropdown-link" style={dropdownLinkStyle}>Menù Completo</Link>
+                    <Link href="/pizza-del-mese" className="dropdown-link" style={dropdownLinkStyle}>Pizza del Mese</Link>
                   </div>
                 </div>
               )}
             </div>
 
-            <Link href="/galleria" className="hover:text-[#E5B54F] transition text-[#333333]">Galleria</Link>
-
-            <Link href="/contatti" className="hover:text-[#E5B54F] transition text-[#333333]">Contatti</Link>
-
-            <Link href="tel:0599110390">
-              <button style={{ backgroundColor: mattone, color: '#fff', padding: '10px 20px', fontSize: '10px', letterSpacing: '2px' }} className="hover:bg-[#600018] transition shadow-md">
-                PRENOTA
-              </button>
-            </Link>
+            <Link href="/galleria" style={navLinkStyle}>Galleria</Link>
+            <Link href="/contatti" style={navLinkStyle}>Contatti</Link>
           </nav>
 
-          {/* HAMBURGER (MOBILE) */}
-          <button className="lg:hidden" onClick={() => setIsMenuOpen(true)}>
+          {/* 3. AZIONI (Destra - Telefono e Prenota) */}
+          <div className="hidden lg:flex" style={{ flex: '1', justifyContent: 'flex-end', alignItems: 'center', gap: '20px' }}>
+            <a href="tel:0599110390" style={{ color: mattone, display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', fontSize: '14px', fontWeight: '700' }}>
+              <Phone size={18} />
+              <span>059 911 0390</span>
+            </a>
+            <Link href="/prenota-un-tavolo" style={{ 
+              backgroundColor: mattone, 
+              color: panna, 
+              padding: '12px 24px', 
+              borderRadius: '50px', 
+              textDecoration: 'none', 
+              fontSize: '11px', 
+              fontWeight: '800', 
+              textTransform: 'uppercase',
+              letterSpacing: '1px'
+            }}>
+              Prenota
+            </Link>
+          </div>
+
+          {/* HAMBURGER (Solo Mobile) */}
+          <button className="lg:hidden" onClick={() => setIsMenuOpen(true)} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>
             <Menu size={32} color={mattone} />
           </button>
         </div>
@@ -103,23 +127,89 @@ export default function Header() {
         backgroundColor: mattone,
         zIndex: 2000,
         transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)',
-        transition: 'transform 0.5s ease',
+        transition: 'transform 0.5s cubic-bezier(0.77, 0, 0.175, 1)',
         display: 'flex',
         flexDirection: 'column'
       }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '20px 5%' }}>
-          <Image src="/logo.png" alt="Logo" width={120} height={40} style={{ filter: 'brightness(0) invert(1)' }} />
-          <button onClick={() => setIsMenuOpen(false)}><X size={40} color="#fff" /></button>
+        {/* Top bar mobile: Logo a sx e X a dx */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 5%', height: '90px' }}>
+          <Image src="/logo.png" alt="Logo" width={120} height={45} style={{ filter: 'brightness(0) invert(1)' }} />
+          <button onClick={() => setIsMenuOpen(false)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer' }}>
+            <X size={40} />
+          </button>
         </div>
-        <nav style={{ padding: '40px 10%', display: 'flex', flexDirection: 'column', gap: '30px' }}>
-          <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-white text-3xl font-serif italic">Home</Link>
-          <Link href="/menu" onClick={() => setIsMenuOpen(false)} className="text-white text-3xl font-serif italic">Il Menù</Link>
-          <Link href="/prenota-un-tavolo" onClick={() => setIsMenuOpen(false)} className="text-white text-3xl font-serif italic">Prenota</Link>
-          <Link href="tel:0599110390" style={{ border: '1px solid #fff', color: '#fff', textAlign: 'center', padding: '15px', borderRadius: '50px' }}>
-            Chiama Ora
-          </Link>
+
+        {/* Links e Pulsanti Mobile */}
+        <nav style={{ padding: '40px 10%', display: 'flex', flexDirection: 'column', gap: '25px' }}>
+          <Link href="/" onClick={() => setIsMenuOpen(false)} style={mobileNavLinkStyle}>Home</Link>
+          <Link href="/informazioni" onClick={() => setIsMenuOpen(false)} style={mobileNavLinkStyle}>Informazioni</Link>
+          <Link href="/menu" onClick={() => setIsMenuOpen(false)} style={mobileNavLinkStyle}>Il Menù</Link>
+          <Link href="/galleria" onClick={() => setIsMenuOpen(false)} style={mobileNavLinkStyle}>Galleria</Link>
+          <Link href="/contatti" onClick={() => setIsMenuOpen(false)} style={mobileNavLinkStyle}>Contatti</Link>
+          
+          <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+            <Link href="/prenota-un-tavolo" onClick={() => setIsMenuOpen(false)} style={{ 
+              backgroundColor: panna, 
+              color: mattone, 
+              textAlign: 'center', 
+              padding: '18px', 
+              borderRadius: '50px', 
+              textDecoration: 'none', 
+              fontWeight: '900', 
+              textTransform: 'uppercase',
+              fontSize: '14px'
+            }}>
+              Prenota un tavolo
+            </Link>
+            <a href="tel:0599110390" style={{ 
+              border: `1px solid ${panna}`, 
+              color: panna, 
+              textAlign: 'center', 
+              padding: '18px', 
+              borderRadius: '50px', 
+              textDecoration: 'none', 
+              fontWeight: '900', 
+              textTransform: 'uppercase',
+              fontSize: '14px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '10px'
+            }}>
+              <Phone size={20} /> Chiama Ora
+            </a>
+          </div>
         </nav>
       </div>
     </>
   );
 }
+
+// Stili riutilizzabili per pulizia
+const navLinkStyle: React.CSSProperties = {
+  color: '#333333',
+  textDecoration: 'none',
+  fontSize: '11px',
+  fontWeight: '700',
+  textTransform: 'uppercase',
+  letterSpacing: '1.5px',
+  transition: 'color 0.3s'
+};
+
+const dropdownLinkStyle: React.CSSProperties = {
+  display: 'block',
+  padding: '12px 25px',
+  textDecoration: 'none',
+  color: '#333333',
+  fontSize: '13px',
+  fontWeight: '600',
+  transition: 'background 0.3s'
+};
+
+const mobileNavLinkStyle: React.CSSProperties = {
+  color: '#ffffff',
+  textDecoration: 'none',
+  fontSize: '2rem',
+  fontFamily: 'serif',
+  fontStyle: 'italic'
+};
