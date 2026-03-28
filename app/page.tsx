@@ -163,11 +163,7 @@ export default function Home() {
             <MenuItem name="Risotto ai Frutti di Mare" price="18,00€" />
             <MenuItem name="Fritto Misto di Pesce" price="18,00€" />
 
-            {/* Nuove due righe (4 piatti) */}
-            <MenuItem name="Tagliata di Manzo al Rosmarino" price="22,00€" />
-            <MenuItem name="Tortelloni Burro e Oro" price="13,00€" />
-            <MenuItem name="Pizza Gourmet del Mese" price="12,50€" />
-            <MenuItem name="Grigliata Reale di Pesce" price="26,00€" />
+          
           </div>
 
           {/* Pulsante per il Menù Intero */}
