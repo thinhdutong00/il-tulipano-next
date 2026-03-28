@@ -118,6 +118,10 @@ export default function Footer() {
           © {currentYear} Il Tulipano - ENJOY SRL Carpi (MO) via L. A. Muratori, 47, CAP 41012 P. IVA 03831040369 - REA MO - 421443 - Powered by Mago Digital
         </p>
       </div>
+      <div style={{ marginTop: '20px', display: 'flex', gap: '20px', justifyContent: 'center' }}>
+  <Link href="/privacy-policy" style={{ color: '#9ca3af', fontSize: '10px', textDecoration: 'none' }}>Privacy Policy</Link>
+  <Link href="/cookie-policy" style={{ color: '#9ca3af', fontSize: '10px', textDecoration: 'none' }}>Cookie Policy</Link>
+</div>
     </footer>
   );
 }
