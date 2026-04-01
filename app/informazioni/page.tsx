@@ -160,7 +160,7 @@ export default function InformazioniPage() {
                     <div className="w-10 h-10 bg-[#3b5998] rounded flex items-center justify-center text-white">FB</div>
                     <div className="w-10 h-10 bg-[#e4405f] rounded flex items-center justify-center text-white">IG</div>
                   </div>
-                  <Link href="https://iltulipanovecchialimidi.it" target="_blank">
+                  <Link href="https://iltulipanolimidi.it" target="_blank">
                     <button className="bg-[#800020] hover:bg-[#600018] text-white px-8 py-3 rounded font-medium flex items-center gap-2 transition-colors">
                       Vai al Sito Web <span className="text-lg">›</span>
                     </button>
