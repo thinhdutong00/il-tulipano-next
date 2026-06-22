@@ -1,9 +1,5 @@
-"use client";
-
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Header from "./components/header";
-import Footer from "./components/footer";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -18,16 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={`${playfair.className} antialiased tracking-tight bg-white text-[#333333]`}>
-        
-        {/* L'Header viene richiamato qui una volta sola per tutto il sito */}
-        <Header />
-        
+      <body
+        className={`${playfair.className} antialiased tracking-tight bg-white text-[#333333]`}
+      >
         {children}
-
-        {/* Footer richiamato qui sotto */}
-        <Footer />
-        
       </body>
     </html>
   );
